@@ -3,7 +3,7 @@ const screen1 = document.querySelector(`.screen1`)
 const screen2 = document.querySelector(`.screen2`)
 const btnTry = document.querySelector(`#btnTry`)
 const btnReset = document.querySelector(`#btnReset`)
-let randonNumber = Math.round(Math.random() * 10)
+let randonNumbers = Math.round(Math.random() * 10)
 let xAttempts = 1
 
 // Eventos
@@ -16,7 +16,7 @@ function handleTryClick(event){
   event.preventDefault()
   const inputNumber = document.querySelector(`#inputNumber`)
 
-  if(Number(inputNumber.value) == randonNumber){
+  if(Number(inputNumber.value) == randonNumbers){
       toogleScreen()
       screen2.querySelector(`h2`)
       .innerText = `Você acertou em ${xAttempts} tentativas!`
@@ -33,7 +33,7 @@ function handleTryClick(event){
 function handleResetClick(){
   toogleScreen()
   xAttempts = 1
-  randonNumber = Math.round(Math.random() * 10)
+  randonNumbers = Math.round(Math.random() * 10)
 }
 
 function toogleScreen(){
